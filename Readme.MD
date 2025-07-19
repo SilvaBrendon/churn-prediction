@@ -1,3 +1,4 @@
+
 # Previsão de Cancelamento de Clientes (Churn Prediction)
 
 Este projeto tem como objetivo prever o **cancelamento de clientes (churn)** com base em dados de uma operadora de telecomunicações. Ele cobre **todo o pipeline de ciência de dados**, do EDA ao deploy com Streamlit e FastAPI, com organização modular e foco em boas práticas.
@@ -41,17 +42,18 @@ projeto_churn/
 ├── requirements.txt            # Dependências do projeto
 ├── Dockerfile                  # Script para criar imagem Docker
 └── README.md                   # Este arquivo
+```
 
 ---
 
-## 📌 Dataset utilizado
+## Dataset utilizado
 
-- 📂 `data/telco_churn.csv`: Dados da [Telco Customer Churn](https://www.kaggle.com/blastchar/telco-customer-churn)
+- `data/telco_churn.csv`: Dados da [Telco Customer Churn](https://www.kaggle.com/blastchar/telco-customer-churn)
 - Inclui: perfil do cliente, tipo de contrato, serviços contratados, valores pagos e se ele cancelou o serviço
 
 ---
 
-## 🧾 Dicionário de Dados
+## Dicionário de Dados
 
 | Variável         | Tipo       | Descrição |
 |------------------|------------|-----------|
@@ -67,69 +69,77 @@ projeto_churn/
 
 ---
 
-##  Como rodar este projeto
+## Como rodar este projeto
 
 ### 1. Clone o repositório
 
-bash
-git clone https://github.com/seu-usuario/projeto-churn.git
+```bash
+git clone https://github.com/SilvaBrendon/churn-prediction.git
 cd projeto-churn
+```
 
 ### 2. Crie o ambiente virtual e instale as dependências
 
+```bash
 python -m venv venv
-source venv/bin/activate no linux/mac os # ou .\venv\Scripts\activate no Windows
+source venv/bin/activate      # no Linux/macOS
+# .venv\Scriptsctivate      # no Windows
+
 pip install -r requirements.txt
+```
 
-### 3. Executar localmente
+### 3. Executar localmente (Streamlit)
 
+```bash
 streamlit run app/streamlit_app.py
+```
 
-Acesse http://localhost:8501
+Acesse: [http://localhost:8501](http://localhost:8501)
 
-### 4. Api com FastAPI
+### 4. Executar API com FastAPI
 
+```bash
 uvicorn app.fastapi_app:app --reload
+```
 
-Acesse http://localhost:8000/docs para a documentação 
+Acesse: [http://localhost:8000/docs](http://localhost:8000/docs)
 
-### 5. Executar com Docker (aplicação streamlit)
+### 5. Executar com Docker
 
-docker build -t churn-api .
+```bash
+docker build -t churn-streamlit .
+docker run -d -p 8000:8000 churn-streamlit
+```
 
-### 6. Resultados
+---
 
-    Melhor modelo: Logistic Regression
+## Resultados
 
-    Acurácia: ~81%
+- Melhor modelo: `Logistic Regression`
+- Acurácia: ~81%
+- F1-score (classe churn): ~0.61
+- ROC AUC: ~0.84
 
-    F1-score para churn: ~0.61
+O modelo foi salvo e integrado à interface e à API para uso imediato em produção.
 
-    ROC AUC: ~0.84
+---
 
-    O modelo foi salvo e integrado à interface e à API para uso imediato em produção.
+## Tecnologias Utilizadas
 
-### Tecnologias Utilizadas
+- Python 3.10
+- Pandas, NumPy, Scikit-Learn, XGBoost
+- Matplotlib, Seaborn
+- Streamlit (frontend)
+- FastAPI + Uvicorn (backend)
+- Joblib
+- Docker
 
-Python 3.10
+---
 
-Pandas, NumPy, Scikit-Learn, XGBoost
+## Autor
 
-Matplotlib, Seaborn (visualização)
+**Brendon Lucas Pereira da Silva**  
+Cientista de Dados com experiência em Big Data, Machine Learning, automação de pipelines, construção de dashboards.
 
-Streamlit (frontend)
-
-FastAPI + Uvicorn (backend)
-
-Joblib (serialização)
-
-Docker (deploy local)
-
-### Autor
-
-Brendon Lucas Pereira da Silva
-
-Cientista de Dados com experiência em Big Data, Machine Learning, automação de pipelines, Construção de Dashboards.
-
-Email: brendon.lucas@outlook.com.br
-LinkedIn[https://www.linkedin.com/in/brendon-lucas-471b99145/] • GitHub[github.com/SilvaBrendon]
+📧 E-mail: [brendon.lucas@outlook.com.br](mailto:brendon.lucas@outlook.com.br)  
+🔗 [LinkedIn](https://www.linkedin.com/in/brendon-lucas-471b99145/) • [GitHub](https://github.com/SilvaBrendon)
