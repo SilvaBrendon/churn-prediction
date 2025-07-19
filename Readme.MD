@@ -19,27 +19,28 @@ Este projeto tem como objetivo prever o **cancelamento de clientes (churn)** com
 
 ## Estrutura do Projeto
 
+```text
 projeto_churn/
-├── app/ # Interface e API
-│ ├── model.pkl # Modelo final treinado
-│ ├── preprocessor.pkl # Pipeline de pré-processamento
-│ ├── streamlit_app.py # Interface visual para testar previsões
-│ └── fastapi_app.py # API REST para integração via JSON
+├── app/                        # Interface e API
+│   ├── model.pkl               # Modelo final treinado
+│   ├── preprocessor.pkl        # Pipeline de pré-processamento
+│   ├── streamlit_app.py        # Interface visual para testar previsões
+│   └── fastapi_app.py          # API REST para integração via JSON
 │
 ├── data/
-│ └── telco_churn.csv # Dataset original (dados de clientes)
+│   └── telco_churn.csv         # Dataset original (dados de clientes)
 │
 ├── notebooks/
-│ ├── eda_telco_churn.ipynb # Análise exploratória de dados (EDA)
-│ └── modelagem_telco_churn.ipynb # Treinamento, avaliação e salvamento do modelo
+│   ├── eda_telco_churn.ipynb   # Análise exploratória de dados (EDA)
+│   └── modelagem_telco_churn.ipynb # Treinamento, avaliação e salvamento do modelo
 │
 ├── src/
-│ ├── preprocessing.py # Funções de tratamento e pipeline
-│ └── modeling.py # Funções de modelagem e avaliação
+│   ├── preprocessing.py        # Funções de tratamento e pipeline
+│   └── modeling.py             # Funções de modelagem e avaliação
 │
-├── requirements.txt # Dependências do projeto
-├── Dockerfile # Script para criar imagem Docker
-└── README.md 
+├── requirements.txt            # Dependências do projeto
+├── Dockerfile                  # Script para criar imagem Docker
+└── README.md                   # Este arquivo
 
 ---
 
@@ -96,7 +97,7 @@ Acesse http://localhost:8000/docs para a documentação
 
 docker build -t churn-api .
 
-### 6. Reultados
+### 6. Resultados
 
     Melhor modelo: Logistic Regression
 
@@ -127,6 +128,7 @@ Docker (deploy local)
 ### Autor
 
 Brendon Lucas Pereira da Silva
+
 Cientista de Dados com experiência em Big Data, Machine Learning, automação de pipelines, Construção de Dashboards.
 
 Email: brendon.lucas@outlook.com.br
